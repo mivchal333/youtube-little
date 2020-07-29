@@ -6,13 +6,16 @@ import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 
 class App extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
             videos: [],
             selectedVideo: null,
         }
+    }
+
+    componentDidMount() {
+        this.onTermSubmit('')
     }
 
     onTermSubmit = async term => {
@@ -25,7 +28,10 @@ class App extends React.Component {
                 key: config["youtube-api-key"]
             }
         });
-        this.setState({videos: response.data.items})
+        this.setState({
+            videos: response.data.items,
+            selectedVideo: response.data.items[0],
+        })
     };
 
     onVideoSelect = (video) => {
