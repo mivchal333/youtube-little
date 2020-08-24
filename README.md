@@ -5,7 +5,7 @@ Example own YouTube player.
 I used:
 * State and Functional Components
 * Axios
-* YouTube Search API
+* YouTube API
 * Semantic UI
 
 ## How to run
